@@ -156,9 +156,9 @@ hr {
   padding: 30px;
 }
 
-/* TOOL CARD */
+/* MAIN FLEX CONTAINER */
 .app {
-  display: flex;        /* ✅ THIS WAS MISSING */
+  display: flex;
   gap: 30px;
   background: #020617;
   width: 100%;
@@ -168,24 +168,37 @@ hr {
   box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
+/* CHILD COLUMNS */
 .box,
 .seo {
-  flex: 1;              /* ✅ NOW IT WORKS */
+  flex: 1;
   max-width: 520px;
 }
 
 /* MOBILE FIX */
 @media (max-width: 768px) {
-  
+  .app {
+    flex-direction: column;
   }
 
-  .app,
+  .box,
   .seo {
     max-width: 100%;
     width: 100%;
   }
-}
 
+  .seo {
+    margin-top: 20px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .seo h2 {
+    font-size: 18px;
+  }
+  
 </style>
 
 </head>
@@ -268,6 +281,7 @@ It is helpful for students, bloggers, writers, and professionals who need accura
 
 </body>
 </html>
+
 
 
 
