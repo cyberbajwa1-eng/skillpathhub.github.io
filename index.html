@@ -79,37 +79,48 @@
 <button onclick="copyResult()">Copy Result</button>
 
 <script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const textarea = document.getElementById("textInput");
+  const result = document.getElementById("result");
 
-const textarea = document.getElementById("textInput");
-const result = document.getElementById("result");
+  if (!textarea || !result) {
+    console.log("Element not found");
+    return;
+  }
 
-textarea.addEventListener("input", function () {
-  let text = textarea.value;
+  textarea.addEventListener("input", function () {
+    let text = textarea.value;
 
-  let words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
-  let characters = text.length;
-  let spaces = (text.match(/ /g) || []).length;
+    let words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
+    let characters = text.length;
+    let spaces = (text.match(/ /g) || []).length;
 
-  result.innerHTML =
-    "Words: " + words +
-    " | Characters: " + characters +
-    " | Spaces: " + spaces;
+    result.innerHTML =
+      "Words: " + words +
+      " | Characters: " + characters +
+      " | Spaces: " + spaces;
+  });
+
+  window.clearText = function () {
+    textarea.value = "";
+    result.innerHTML = "Words: 0 | Characters: 0 | Spaces: 0";
+  };
+
+  window.copyResult = function () {
+    navigator.clipboard.writeText(result.innerText);
+    alert("Result copied!");
+  };
 });
+</script>
 
-function clearText() {
-  textarea.value = "";
-  result.innerHTML = "Words: 0 | Characters: 0 | Spaces: 0";
-}
 
-function copyResult() {
-  navigator.clipboard.writeText(result.innerText);
-  alert("Result copied!");
-}
 </script>
 
 
 </body>
 </html>
+
 
 
 
