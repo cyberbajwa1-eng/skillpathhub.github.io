@@ -1,102 +1,74 @@
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-<title>Free Word Counter Tool – Count Words & Characters Online</title>
-  
-<meta name="description" content="Free online word counter tool to count words, characters and spaces instantly. Useful for students, bloggers and writers.">
-<meta name="description" content="Free online word counter tool to count words, characters and spaces instantly. Useful for students, bloggers and writers.">
-
+  <title>Free Word Counter Tool – Count Words & Characters Online</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Free online text counter tool to count words, characters and spaces. Simple and fast.">
+  <meta name="description" content="Free online word counter tool to count words, characters and spaces instantly. Useful for students, bloggers and writers.">
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+      background: #f3f4f6;
+      padding: 30px;
     }
     .box {
-      background: #020617;
-      padding: 25px;
-      border-radius: 10px;
-      width: 100%;
-      max-width: 500px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    p {
-      text-align: center;
-      font-size: 14px;
-      color: #94a3b8;
+      max-width: 600px;
+      margin: auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
     }
     textarea {
       width: 100%;
-      height: 120px;
-      margin-top: 15px;
+      height: 140px;
       padding: 10px;
-      border-radius: 5px;
-      border: none;
-      outline: none;
-      resize: none;
-      font-size: 14px;
+      font-size: 16px;
     }
     button {
-      width: 100%;
-      margin-top: 15px;
-      padding: 10px;
-      background: #22c55e;
-      color: #020617;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
+      margin-top: 10px;
+      padding: 8px 14px;
+      font-size: 14px;
       cursor: pointer;
     }
     .result {
       margin-top: 15px;
-      text-align: center;
-      font-size: 15px;
+      font-weight: bold;
     }
   </style>
 </head>
+
 <body>
 
 <div class="box">
   <h1>Free Online Word Counter Tool</h1>
-<p>
-This free word counter tool helps you count words, characters, and spaces instantly.
-It is useful for students, bloggers, writers, and anyone working with text.
-</p>
-
-  <p>Count words, characters and spaces instantly</p>
+  <p>
+    This free word counter tool helps you count words, characters, and spaces instantly.
+    It is useful for students, bloggers, writers, and anyone working with text.
+  </p>
 
   <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
 
   <div class="result" id="result">
-  Words: 0 | Characters: 0 | Spaces: 0
+    Words: 0 | Characters: 0 | Spaces: 0
+  </div>
+
+  <button onclick="clearText()">Clear Text</button>
+  <button onclick="copyResult()">Copy Result</button>
 </div>
 
-<br>
-
-<button onclick="clearText()">Clear Text</button>
-<button onclick="copyResult()">Copy Result</button>
-
-<script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const textarea = document.getElementById("textInput");
   const result = document.getElementById("result");
-
-  if (!textarea || !result) {
-    console.log("Element not found");
-    return;
-  }
 
   textarea.addEventListener("input", function () {
     let text = textarea.value;
@@ -123,16 +95,5 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-
-</script>
-
-
 </body>
 </html>
-
-
-
-
-
-
-
