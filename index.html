@@ -69,10 +69,14 @@
 
   <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
 
-  <button onclick="countText()">Count</button>
-
-  <div class="result" id="result"></div>
+  <div class="result" id="result">
+  Words: 0 | Characters: 0 | Spaces: 0
 </div>
+
+<br>
+
+<button onclick="clearText()">Clear Text</button>
+<button onclick="copyResult()">Copy Result</button>
 
 <script>
 function countText() {
@@ -90,3 +94,4 @@ function countText() {
 
 </body>
 </html>
+
