@@ -169,82 +169,55 @@ hr {
 
 <body>
   <div class="wrapper">
-    
-<div class="app">
- 
-<div class="box">
-  <h1>Free Online Word Counter Tool</h1>
-  <p>
-    This free word counter tool helps you count words, characters, and spaces instantly.
-    It is useful for students, bloggers, writers, and anyone working with text.
-  </p>
+  <div class="app">
 
-  <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
+    <div class="box">
+      <h1>Free Online Word Counter Tool</h1>
+      <p>
+        This free word counter tool helps you count words, characters, and spaces instantly.
+      </p>
 
-  <div class="result" id="result">
-    Words: 0 | Characters: 0 | Spaces: 0
+      <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
+
+      <div class="result" id="result">
+        Words: 0 | Characters: 0 | Spaces: 0
+      </div>
+
+      <div class="buttons">
+        <button onclick="clearText()">Clear Text</button>
+        <button onclick="copyResult()">Copy Result</button>
+      </div>
+    </div>
+
+    <section class="seo">
+      <h2>What is a Word Counter Tool?</h2>
+      <p>
+        A word counter tool is used to count words, characters, and spaces in a text.
+      </p>
+
+      <h2>How to Use This Tool</h2>
+      <ul>
+        <li>Type or paste your text</li>
+        <li>See instant results</li>
+        <li>Copy or clear text</li>
+      </ul>
+
+      <h2>Why Use Our Tool?</h2>
+      <ul>
+        <li>Free</li>
+        <li>No signup</li>
+        <li>Fast</li>
+      </ul>
+    </section>
+
   </div>
-
- <div class="buttons">
-  <button onclick="clearText()">Clear Text</button>
-  <button onclick="copyResult()">Copy Result</button>
 </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const textarea = document.getElementById("textInput");
-  const result = document.getElementById("result");
-
-  textarea.addEventListener("input", function () {
-    let text = textarea.value;
-
-    let words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
-    let characters = text.length;
-    let spaces = (text.match(/ /g) || []).length;
-
-    result.innerHTML =
-      "Words: " + words +
-      " | Characters: " + characters +
-      " | Spaces: " + spaces;
-  });
-
-  window.clearText = function () {
-    textarea.value = "";
-    result.innerHTML = "Words: 0 | Characters: 0 | Spaces: 0";
-  };
-
-  window.copyResult = function () {
-    navigator.clipboard.writeText(result.innerText);
-    alert("Result copied!");
-  };
-});
-</script>
-   <section class="seo">
-<h2>What is a Word Counter Tool?</h2>
-<p>
-A word counter tool is used to count words, characters, and spaces in a text.
-It is helpful for students, bloggers, writers, and professionals who need accurate text length.
-</p>
-
-<h2>How to Use This Tool</h2>
-<ul>
-  <li>Type or paste your text in the box</li>
-  <li>Words, characters, and spaces update instantly</li>
-  <li>Use clear or copy buttons if needed</li>
-</ul>
-
-<h2>Why Use Our Free Tool?</h2>
-<ul>
-  <li>100% free and online</li>
-  <li>No signup required</li>
-  <li>Fast and accurate counting</li>
-</ul>
-</section>
-</div>
 <hr style="margin:20px 0; border:1px solid #1e293b;">
 
 </body>
 </html>
+
 
 
 
