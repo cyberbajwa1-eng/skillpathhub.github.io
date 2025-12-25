@@ -79,19 +79,37 @@
 <button onclick="copyResult()">Copy Result</button>
 
 <script>
-function countText() {
-  let text = document.getElementById("textInput").value;
-  let words = text.trim() ? text.trim().split(/\s+/).length : 0;
+<script>
+const textarea = document.getElementById("textInput");
+const result = document.getElementById("result");
+
+textarea.addEventListener("input", function () {
+  let text = textarea.value;
+
+  let words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
   let characters = text.length;
   let spaces = (text.match(/ /g) || []).length;
 
-  document.getElementById("result").innerHTML =
+  result.innerHTML =
     "Words: " + words +
-    "<br>Characters: " + characters +
-    "<br>Spaces: " + spaces;
+    " | Characters: " + characters +
+    " | Spaces: " + spaces;
+});
+
+function clearText() {
+  textarea.value = "";
+  result.innerHTML = "Words: 0 | Characters: 0 | Spaces: 0";
 }
+
+function copyResult() {
+  navigator.clipboard.writeText(result.innerText);
+  alert("Result copied!");
+}
+</script>
+
 </script>
 
 </body>
 </html>
+
 
