@@ -120,14 +120,17 @@ hr {
 /* MAIN FLEX CONTAINER */
 .app {
   display: flex;
+  flex-direction: column;   /* 👈 THIS IS THE KEY */
   gap: 30px;
   background: #020617;
   width: 100%;
-  max-width: 1100px;
+  max-width: 900px;
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
+
+
 
 /* CHILD COLUMNS */
 .box,
@@ -242,6 +245,7 @@ function copyResult() {
 
 </body>
 </html>
+
 
 
 
