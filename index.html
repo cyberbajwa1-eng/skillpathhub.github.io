@@ -116,11 +116,7 @@ hr {
 .seo ul {
   padding-left: 18px;
 }
-.app {
-  display: flex;
-  gap: 30px;
-  align-items: flex-start;
-  padding: 20px;
+
 }
 
 .box {
@@ -164,34 +160,52 @@ hr {
     font-size: 14px;
   }
 }
+/* PAGE LAYOUT */
+.wrapper {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px;
+}
+
+/* TOOL CARD */
+.app {
+  background: #020617;
+  width: 100%;
+  max-width: 520px;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+/* SEO CARD */
+.seo {
+  max-width: 520px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .app,
+  .seo {
+    max-width: 100%;
+    width: 100%;
+  }
+}
 
 </style>
 
 </head>
 
 <body>
+  <div class="wrapper">
 <div class="app">
-  <section class="seo">
-<h2>What is a Word Counter Tool?</h2>
-<p>
-A word counter tool is used to count words, characters, and spaces in a text.
-It is helpful for students, bloggers, writers, and professionals who need accurate text length.
-</p>
-
-<h2>How to Use This Tool</h2>
-<ul>
-  <li>Type or paste your text in the box</li>
-  <li>Words, characters, and spaces update instantly</li>
-  <li>Use clear or copy buttons if needed</li>
-</ul>
-
-<h2>Why Use Our Free Tool?</h2>
-<ul>
-  <li>100% free and online</li>
-  <li>No signup required</li>
-  <li>Fast and accurate counting</li>
-</ul>
-</section>
+ 
 <div class="box">
   <h1>Free Online Word Counter Tool</h1>
   <p>
@@ -238,11 +252,33 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 });
 </script>
+   <section class="seo">
+<h2>What is a Word Counter Tool?</h2>
+<p>
+A word counter tool is used to count words, characters, and spaces in a text.
+It is helpful for students, bloggers, writers, and professionals who need accurate text length.
+</p>
+
+<h2>How to Use This Tool</h2>
+<ul>
+  <li>Type or paste your text in the box</li>
+  <li>Words, characters, and spaces update instantly</li>
+  <li>Use clear or copy buttons if needed</li>
+</ul>
+
+<h2>Why Use Our Free Tool?</h2>
+<ul>
+  <li>100% free and online</li>
+  <li>No signup required</li>
+  <li>Fast and accurate counting</li>
+</ul>
+</section>
 </div>
 <hr style="margin:20px 0; border:1px solid #1e293b;">
 
 </body>
 </html>
+
 
 
 
