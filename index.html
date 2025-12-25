@@ -186,6 +186,33 @@ hr {
         <button onclick="copyResult()">Copy Result</button>
       </div>
     </div>
+<script>
+const textarea = document.getElementById("textInput");
+const result = document.getElementById("result");
+
+textarea.addEventListener("input", function () {
+  let text = textarea.value;
+
+  let words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
+  let characters = text.length;
+  let spaces = (text.match(/ /g) || []).length;
+
+  result.innerHTML =
+    "Words: " + words +
+    " | Characters: " + characters +
+    " | Spaces: " + spaces;
+});
+
+function clearText() {
+  textarea.value = "";
+  result.innerHTML = "Words: 0 | Characters: 0 | Spaces: 0";
+}
+
+function copyResult() {
+  navigator.clipboard.writeText(result.innerText);
+  alert("Result copied!");
+}
+</script>
 
     <section class="seo">
       <h2>What is a Word Counter Tool?</h2>
@@ -215,6 +242,7 @@ hr {
 
 </body>
 </html>
+
 
 
 
