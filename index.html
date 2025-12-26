@@ -373,9 +373,17 @@ const result = document.getElementById("result");
 textarea.addEventListener("input", function () {
   let text = textarea.value;
 
-  let words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
-  let characters = text.length;
-  let spaces = (text.match(/ /g) || []).length;
+let words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
+let characters = text.length;
+let spaces = (text.match(/ /g) || []).length;
+
+// NEW COUNTS
+let sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
+let paragraphs = text.split(/\n+/).filter(p => p.trim().length > 0).length;
+
+// Reading time (200 words per minute)
+let readingTime = words === 0 ? 0 : Math.ceil(words / 200);
+
 
   result.innerHTML =
     "Words: " + words +
@@ -490,6 +498,7 @@ document.querySelectorAll(".faq-question").forEach(btn => {
 
 </body>
 </html>
+
 
 
 
