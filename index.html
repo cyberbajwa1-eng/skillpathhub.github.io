@@ -448,15 +448,17 @@ function updateCounts() {
     ? ((keywordCount / words) * 100).toFixed(2)
     : 0;
 
-  result.innerHTML =
-    "Words: " + words +
-    " | Characters: " + characters +
-    " | Spaces: " + spaces +
-    " | Sentences: " + sentences +
-    " | Paragraphs: " + paragraphs +
-    " | Reading Time: " + readingTime + " min" +
-    " | Keyword Count: " + keywordCount +
-    " | Keyword Density: " + keywordDensity + "%";
+result.innerHTML = `
+  <div class="stat"><span>Words</span><strong>${words}</strong></div>
+  <div class="stat"><span>Characters</span><strong>${characters}</strong></div>
+  <div class="stat"><span>Spaces</span><strong>${spaces}</strong></div>
+  <div class="stat"><span>Sentences</span><strong>${sentences}</strong></div>
+  <div class="stat"><span>Paragraphs</span><strong>${paragraphs}</strong></div>
+  <div class="stat"><span>Reading Time</span><strong>${readingTime} min</strong></div>
+  <div class="stat"><span>Keyword Count</span><strong>${keywordCount}</strong></div>
+  <div class="stat"><span>Keyword Density</span><strong>${keywordDensity}%</strong></div>
+`;
+
 }
 
 textarea.addEventListener("input", updateCounts);
@@ -566,6 +568,7 @@ document.querySelectorAll(".faq-question").forEach(btn => {
 
 </body>
 </html>
+
 
 
 
