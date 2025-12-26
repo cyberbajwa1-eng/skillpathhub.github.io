@@ -182,28 +182,20 @@ hr {
 }
 
 .wrapper {
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 24px;
   width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
+  display: block;        /* 🔑 no flex */
   padding: 16px;
 }
 
 
 
 
-
 .app {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  background: #020617;
   width: 100%;
-  max-width: 850px;   /* 👈 reduced */
-  padding: 22px;
+  max-width: 900px;
   margin: 0 auto;
+  background: #020617;
+  padding: 22px;
   border-radius: 14px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.5);
 }
@@ -573,6 +565,7 @@ document.querySelectorAll(".faq-question").forEach(btn => {
 
 </body>
 </html>
+
 
 
 
