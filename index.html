@@ -385,7 +385,7 @@ let paragraphs = text.split(/\n+/).filter(p => p.trim().length > 0).length;
 let readingTime = words === 0 ? 0 : Math.ceil(words / 200);
 
 
- result.innerHTML =
+result.innerHTML =
   "Words: " + words +
   " | Characters: " + characters +
   " | Spaces: " + spaces +
@@ -502,6 +502,7 @@ document.querySelectorAll(".faq-question").forEach(btn => {
 
 </body>
 </html>
+
 
 
 
