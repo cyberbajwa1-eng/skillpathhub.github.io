@@ -383,48 +383,53 @@ body.light .seo {
 <script>
 const textarea = document.getElementById("textInput");
 const result = document.getElementById("result");
+const keywordInput = document.getElementById("keywordInput");
 
-textarea.addEventListener("input", function () {
-  let text = textarea.value;
+function updateCounts() {
+  const text = textarea.value.trim();
+  const keyword = keywordInput.value.trim().toLowerCase();
 
-let words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
-let characters = text.length;
-let spaces = (text.match(/ /g) || []).length;
+  const wordsArray = text === "" ? [] : text.split(/\s+/);
+  const words = wordsArray.length;
+  const characters = textarea.value.length;
+  const spaces = (textarea.value.match(/ /g) || []).length;
+  const sentences = text === "" ? 0 : text.split(/[.!?]+/).filter(s => s.trim()).length;
+  const paragraphs = text === "" ? 0 : text.split(/\n+/).filter(p => p.trim()).length;
+  const readingTime = Math.max(1, Math.ceil(words / 200));
 
-// NEW COUNTS
-let sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
-let paragraphs = text.split(/\n+/).filter(p => p.trim().length > 0).length;
+  let keywordCount = 0;
+  if (keyword && words > 0) {
+    keywordCount = wordsArray.filter(w => w.toLowerCase() === keyword).length;
+  }
 
-// Reading time (200 words per minute)
-let readingTime = words === 0 ? 0 : Math.ceil(words / 200);
+  const keywordDensity = words > 0
+    ? ((keywordCount / words) * 100).toFixed(2)
+    : 0;
 
+  result.innerHTML =
+    "Words: " + words +
+    " | Characters: " + characters +
+    " | Spaces: " + spaces +
+    " | Sentences: " + sentences +
+    " | Paragraphs: " + paragraphs +
+    " | Reading Time: " + readingTime + " min" +
+    " | Keyword Count: " + keywordCount +
+    " | Keyword Density: " + keywordDensity + "%";
+}
 
-result.innerHTML =
-  "Words: " + words +
-  " | Characters: " + characters +
-  " | Spaces: " + spaces +
-  " | Sentences: " + sentences +
-  " | Paragraphs: " + paragraphs +
-  " | Reading Time: " + readingTime + " min";
-
-});
+textarea.addEventListener("input", updateCounts);
+keywordInput.addEventListener("input", updateCounts);
 
 function clearText() {
   textarea.value = "";
-  result.innerHTML =
-    "Words: 0 | Characters: 0 | Spaces: 0 | Sentences: 0 | Paragraphs: 0 | Reading Time: 0 min";
+  keywordInput.value = "";
+  updateCounts();
 }
-
-
 
 function copyResult() {
   navigator.clipboard.writeText(result.innerText);
   alert("Result copied!");
 }
-  function toggleTheme() {
-  document.body.classList.toggle("light");
-}
-
 </script>
 
     <section class="seo">
@@ -519,6 +524,7 @@ document.querySelectorAll(".faq-question").forEach(btn => {
 
 </body>
 </html>
+
 
 
 
