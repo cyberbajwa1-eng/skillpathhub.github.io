@@ -397,8 +397,11 @@ result.innerHTML =
 
 function clearText() {
   textarea.value = "";
-  result.innerHTML = "Words: 0 | Characters: 0 | Spaces: 0";
+  result.innerHTML =
+    "Words: 0 | Characters: 0 | Spaces: 0 | Sentences: 0 | Paragraphs: 0 | Reading Time: 0 min";
 }
+
+
 
 function copyResult() {
   navigator.clipboard.writeText(result.innerText);
@@ -502,6 +505,7 @@ document.querySelectorAll(".faq-question").forEach(btn => {
 
 </body>
 </html>
+
 
 
 
