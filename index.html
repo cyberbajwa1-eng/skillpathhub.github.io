@@ -251,11 +251,7 @@ hr {
     font-size: 13px;
   }
 
-   .seo {
-    margin-top: 20px;
-  }
-
- 
+   
   .seo h2 {
     font-size: 18px;
   }
@@ -341,6 +337,7 @@ hr {
    .seo {
   max-width: 900px;
   margin: 30px auto;
+      margin-top: 20px;
 }
    
 </style>
@@ -408,7 +405,8 @@ function updateCounts() {
   const spaces = (textarea.value.match(/ /g) || []).length;
   const sentences = text === "" ? 0 : text.split(/[.!?]+/).filter(s => s.trim()).length;
   const paragraphs = text === "" ? 0 : text.split(/\n+/).filter(p => p.trim()).length;
-  const readingTime = Math.max(1, Math.ceil(words / 200));
+  const readingTime = words === 0 ? 0 : Math.ceil(words / 200);
+
 
   let keywordCount = 0;
   if (keyword && words > 0) {
@@ -539,6 +537,7 @@ document.querySelectorAll(".faq-question").forEach(btn => {
 
 </body>
 </html>
+
 
 
 
