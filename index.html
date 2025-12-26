@@ -417,9 +417,7 @@ body.light .seo {
   <div class="wrapper">
   <div class="app">
     
-<div class="theme-toggle">
-  <button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
-</div>
+
 
      
       <h1>Free Online Word Counter Tool</h1>
@@ -604,34 +602,10 @@ document.querySelectorAll(".faq-question").forEach(btn => {
 });
 </script>
  
-<script>
-  const themeBtn = document.querySelector(".theme-btn");
-  const body = document.body;
-
-  // Load saved theme
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "light") {
-    body.classList.add("light");
-    themeBtn.innerHTML = "☀️ Light";
-  } else {
-    themeBtn.innerHTML = "🌙 Dark";
-  }
-
-  function toggleTheme() {
-    body.classList.toggle("light");
-
-    if (body.classList.contains("light")) {
-      themeBtn.innerHTML = "☀️ Light";
-      localStorage.setItem("theme", "light");
-    } else {
-      themeBtn.innerHTML = "🌙 Dark";
-      localStorage.setItem("theme", "dark");
-    }
-  }
-</script>
 
 </body>
 </html>
+
 
 
 
