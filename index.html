@@ -181,14 +181,16 @@ hr {
   padding-left: 18px;
 }
 
-/* PAGE LAYOUT */
 .wrapper {
-  padding: 16px;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 24px;
   width: 100%;
-  max-width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 16px;
 }
+
 
 
 
@@ -571,6 +573,7 @@ document.querySelectorAll(".faq-question").forEach(btn => {
 
 </body>
 </html>
+
 
 
 
